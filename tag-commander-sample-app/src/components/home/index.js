@@ -83,9 +83,77 @@ const Home = () => {
       </p>
       <pre>
         &lt;<code className="keyword">TcVars</code> <code className="method">env_language</code>=<code className="string">"fr"</code> <code className="method">env_template</code>=<code className="string">"super_shop"</code> /&gt;
-      </pre>
-      </div>
-        );
+ 
+
+
+
+
+{/* <code class="comment">// other exemples</code>
+&lt;<code class="keyword">template</code> <code class="varible">class</code>=<code class="string">"sm-button green-500"</code> <code class="varible">tc-set-vars</code>=<code class="string">'{"env_language": $ctrl.default_language}'</code>&gt&lt;/<code class="keyword">template</code>&gt
+&lt;<code class="keyword">div</code> <code class="varible">class</code>=<code class="string">"sm-button green-500"</code> <code class="varible">tc-set-vars</code>=<code class="string">'{"env_language": $scope.default_language}'</code>&gt&lt;/<code class="keyword">div</code>&gt */}
+</pre>
+<p>
+    You need to provide the key of your var and it's value. The object provided have to be a JSON between single quote. You can also use your $ctrl and $scope vars, but you do not need to surround them with double quote.
+</p>
+
+<h2>How to get your Vars</h2>
+<h3>In your controller</h3>
+<pre>
+<code className="keyword">var</code> <code className="varible">myVar</code> = <code className="varible">TagCommander</code>.<code className="method">getTcVar</code>(<code class="string">'VarKey'</code>);
+</pre>
+
+<h2>How to remove a Var</h2>
+<p>
+    In your component
+</p>
+<pre>
+<code className="varible">wrapper</code>.<code className="method">removeTcVars</code>(<code className="string">'env_template'</code>);
+</pre>
+
+<h2>How to capture an Event</h2>
+<h3>In your component</h3>
+<pre>
+    <code className="keyword">import</code> <code className="varible">React</code> <code className="keyword">from</code> <code className="string">'react'</code>;<br />
+    <code className="keyword">import</code> <code className="varible">TC_Wrapper</code> <code className="keyword">from</code> <code className="string">'react-tag-commander'</code>;<br />
+    <br />
+    <code className="keyword">class</code> <code className="varible">Pannier</code> <code className="keyword">extends</code> <code className="varible">React.Component</code> {'{'}
+    <br /><br />
+    &nbsp;&nbsp;<code className="method">constructor</code>(<code className="varible">props</code>) {'{'}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<code className="method">super</code>(<code className="varible">props</code>);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<code className="varible">this.wrapper</code> = <code className="varible">TC_Wrapper</code>.<code className="method">getInstance()</code>;<br />
+    &nbsp;&nbsp;{'}'}<br />
+    &nbsp;&nbsp;<code className="method">handleAddQuantityItem</code> = (<code className="varible">index</code>, <code className="varible">event</code>, <code className="varible">data</code>) => {'{'}<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<code className="varible">this.wrapper</code>.<code className="method">captureEvent(</code><code className="string">'add_to_cart'</code>, <code className="varible">event.currentTarget</code>, <code className="varible">data</code>);<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<code className="varible">this.props</code>.<code className="method">addQuantityItem(</code><code className="varible">index</code><code className="method">)</code>;<br />
+    &nbsp;&nbsp;{'}'};
+</pre>
+<h3>In render function</h3>
+<pre>
+    <code className="method">render()</code> {'{'}<br />
+        &nbsp;&nbsp;<code className="keyword">return</code> (<code className="string">&lt;button className="sm-button green-500" onClick={'{'}</code><code className="method">(</code><code className="varible">event</code><code className="method">)</code> <code className="method">=></code> <code className="varible">this</code>.<code className="method">handleAddQuantityItem(</code><code className="varible">index</code>, <code className="varible">event</code>, <code className="varible">item.name</code><code className="method">)</code><code className="string">{'}'}&gt; + &lt;/button&gt;</code>);<br />
+    {'}'}
+</pre>
+
+<h2>How to reload containers</h2>
+<p>
+    When you update your varible you also need to update your container to propagate the changes
+</p>
+<pre>
+<code class="keyword">var</code> <code class="varible">idc</code> = <code class="string">'1234'</code>;<br />
+<code class="keyword">var</code> <code class="varible">ids</code> = <code class="string">'1234'</code>;<br />
+<code class="keyword">var</code> <code class="varible">options</code> = {'{'}<br />
+&nbsp;&nbsp;<code class="varible">exclusions</code>: [<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<code class="string">"datastorage"</code>,<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<code class="string">"deduplication"</code>,<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<code class="string">"internalvars"</code>,<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<code class="string">"privacy"</code><br />
+    &nbsp;&nbsp;]<br />
+{'}'};<br /><br />
+<code class="varible">wrapper</code>.<code class="method">reloadContainer</code>(<code class="varible">ids</code>, <code class="varible">idc</code>, <code class="varible">options</code>);<br /><br />
+<code class="comment">{'// or you can reload all the containers'}</code><br />
+<code class="varible">wrapper</code>.<code class="method">reloadAllContainers</code>(<code class="varible">options</code>);
+</pre>
+    </div>);
   }
 
 

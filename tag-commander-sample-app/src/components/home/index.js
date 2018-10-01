@@ -83,14 +83,6 @@ const Home = () => {
       </p>
       <pre>
         &lt;<code className="keyword">TcVars</code> <code className="method">env_language</code>=<code className="string">"fr"</code> <code className="method">env_template</code>=<code className="string">"super_shop"</code> /&gt;
- 
-
-
-
-
-{/* <code class="comment">// other exemples</code>
-&lt;<code class="keyword">template</code> <code class="varible">class</code>=<code class="string">"sm-button green-500"</code> <code class="varible">tc-set-vars</code>=<code class="string">'{"env_language": $ctrl.default_language}'</code>&gt&lt;/<code class="keyword">template</code>&gt
-&lt;<code class="keyword">div</code> <code class="varible">class</code>=<code class="string">"sm-button green-500"</code> <code class="varible">tc-set-vars</code>=<code class="string">'{"env_language": $scope.default_language}'</code>&gt&lt;/<code class="keyword">div</code>&gt */}
 </pre>
 <p>
     You need to provide the key of your var and it's value. The object provided have to be a JSON between single quote. You can also use your $ctrl and $scope vars, but you do not need to surround them with double quote.

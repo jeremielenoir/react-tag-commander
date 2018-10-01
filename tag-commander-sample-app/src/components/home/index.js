@@ -12,16 +12,16 @@ const Home = () => {
         <br />
         <code className="comment">{'// you need to provide URIS to load containers script. You can add as many container as you like'}</code><br />
         <code className="comment">{'// addContainer (id, uri, node)'}</code><br />
-        <code class="varible">wrapper</code>.<code class="method">addContainer</code>(<code class="string">'a_name_for_the_container_id'</code>, <code class="string">'/the/path/to/tag-commander-container.js'</code>, <code class="string" >'head'</code>);<br />
+        <code className="varible">wrapper</code>.<code className="method">addContainer</code>(<code className="string">'a_name_for_the_container_id'</code>, <code className="string">'/the/path/to/tag-commander-container.js'</code>, <code className="string" >'head'</code>);<br />
         <br />
-        <code class="comment">{'// but you can also remove them'}</code><br />
-        <code class="varible">wrapper</code>.<code class="method">removeContainer</code>(<code class="string">'my_tag_container_id'</code>);<br />
+        <code className="comment">{'// but you can also remove them'}</code><br />
+        <code className="varible">wrapper</code>.<code className="method">removeContainer</code>(<code className="string">'my_tag_container_id'</code>);<br />
         <br />
-        <code class="comment">{'// you can set debug by setting this to true'}</code><br />
-        <code class="varible">wrapper</code>.<code class="method">setDebug</code>(<code class="keyword">true</code>);<br />
+        <code className="comment">{'// you can set debug by setting this to true'}</code><br />
+        <code className="varible">wrapper</code>.<code className="method">setDebug</code>(<code className="keyword">true</code>);<br />
         <br />
-        <code class="comment">{'// you can track the url of your app by setting this, it will reload the containers on each page change'}</code><br />
-        <code class="varible">wrapper</code>.<code class="method">trackRoutes</code>(<code class="keyword">true</code>);<br />
+        <code className="comment">{'// you can track the url of your app by setting this, it will reload the containers on each page change'}</code><br />
+        <code className="varible">wrapper</code>.<code className="method">trackRoutes</code>(<code className="keyword">true</code>);<br />
       </pre>
 
       <p>
@@ -41,11 +41,11 @@ const Home = () => {
         If you don't set the TagCommanderProvider.trackRoutes(true); (or you set it to false) you will have to reload your container manually
       </p>
       <pre>
-        <code class="comment">{'// reload a specifique container'}</code><br />
-        <code class="varible">wrapper</code>.<code class="method">reloadContainer</code>(<code class="varible">ids</code>, <code class="varible">idc</code>, <code class="varible">options</code>);<br />
+        <code className="comment">{'// reload a specifique container'}</code><br />
+        <code className="varible">wrapper</code>.<code className="method">reloadContainer</code>(<code className="varible">ids</code>, <code className="varible">idc</code>, <code className="varible">options</code>);<br />
         <br />
-        <code class="comment">{'// or you can reload all the containers'}</code><br />
-        <code class="varible">wrapper</code>.<code class="method">reloadAllContainers</code>(<code class="varible">options</code>);<br />
+        <code className="comment">{'// or you can reload all the containers'}</code><br />
+        <code className="varible">wrapper</code>.<code className="method">reloadAllContainers</code>(<code className="varible">options</code>);<br />
       </pre>
 
       <h2>How to set your Vars</h2>
@@ -91,7 +91,7 @@ const Home = () => {
 <h2>How to get your Vars</h2>
 <h3>In your controller</h3>
 <pre>
-<code className="keyword">var</code> <code className="varible">myVar</code> = <code className="varible">TagCommander</code>.<code className="method">getTcVar</code>(<code class="string">'VarKey'</code>);
+<code className="keyword">var</code> <code className="varible">myVar</code> = <code className="varible">TagCommander</code>.<code className="method">getTcVar</code>(<code className="string">'VarKey'</code>);
 </pre>
 
 <h2>How to remove a Var</h2>
@@ -131,19 +131,19 @@ const Home = () => {
     When you update your varible you also need to update your container to propagate the changes
 </p>
 <pre>
-<code class="keyword">var</code> <code class="varible">idc</code> = <code class="string">'1234'</code>;<br />
-<code class="keyword">var</code> <code class="varible">ids</code> = <code class="string">'1234'</code>;<br />
-<code class="keyword">var</code> <code class="varible">options</code> = {'{'}<br />
-&nbsp;&nbsp;<code class="varible">exclusions</code>: [<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;<code class="string">"datastorage"</code>,<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;<code class="string">"deduplication"</code>,<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;<code class="string">"internalvars"</code>,<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;<code class="string">"privacy"</code><br />
+<code className="keyword">var</code> <code className="varible">idc</code> = <code className="string">'1234'</code>;<br />
+<code className="keyword">var</code> <code className="varible">ids</code> = <code className="string">'1234'</code>;<br />
+<code className="keyword">var</code> <code className="varible">options</code> = {'{'}<br />
+&nbsp;&nbsp;<code className="varible">exclusions</code>: [<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<code className="string">"datastorage"</code>,<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<code className="string">"deduplication"</code>,<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<code className="string">"internalvars"</code>,<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;<code className="string">"privacy"</code><br />
     &nbsp;&nbsp;]<br />
 {'}'};<br /><br />
-<code class="varible">wrapper</code>.<code class="method">reloadContainer</code>(<code class="varible">ids</code>, <code class="varible">idc</code>, <code class="varible">options</code>);<br /><br />
-<code class="comment">{'// or you can reload all the containers'}</code><br />
-<code class="varible">wrapper</code>.<code class="method">reloadAllContainers</code>(<code class="varible">options</code>);
+<code className="varible">wrapper</code>.<code className="method">reloadContainer</code>(<code className="varible">ids</code>, <code className="varible">idc</code>, <code className="varible">options</code>);<br /><br />
+<code className="comment">{'// or you can reload all the containers'}</code><br />
+<code className="varible">wrapper</code>.<code className="method">reloadAllContainers</code>(<code className="varible">options</code>);
 </pre>
     </div>);
   }

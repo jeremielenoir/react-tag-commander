@@ -108,7 +108,7 @@ const Home = () => {
     <code className="keyword">import</code> <code className="varible">React</code> <code className="keyword">from</code> <code className="string">'react'</code>;<br />
     <code className="keyword">import</code> <code className="varible">TC_Wrapper</code> <code className="keyword">from</code> <code className="string">'react-tag-commander'</code>;<br />
     <br />
-    <code className="keyword">class</code> <code className="varible">Panier</code> <code className="keyword">extends</code> <code className="varible">React.Component</code> {'{'}
+    <code className="keyword">class</code> <code className="varible">Pannier</code> <code className="keyword">extends</code> <code className="varible">React.Component</code> {'{'}
     <br /><br />
     &nbsp;&nbsp;<code className="method">constructor</code>(<code className="varible">props</code>) {'{'}<br />
     &nbsp;&nbsp;&nbsp;&nbsp;<code className="method">super</code>(<code className="varible">props</code>);<br />
